@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 
-
+import CategoryGrid from '../components/CategoryGrid';
 import {CATEGORIES} from '../data/fake-data';
 
 
@@ -10,21 +10,18 @@ const Categories = props => {
 
     const renderGridItem = (itemData) => {
         return (
-        <TouchableOpacity 
-        style={styles.gridItem} 
-        onPress={() => {props.navigation.navigate({
+            <CategoryGrid 
+            title={itemData.item.title} 
+            color={itemData.item.color}
+            onSelect={() => {
+            props.navigation.navigate({
             routeName: 'CategoryMeals', 
             params: {
             categoryId: itemData.item.id
-         }
+            }
         });
-        }}
-        >
-            <View>
-                <Text>{itemData.item.title}</Text>
-            </View>
-        </TouchableOpacity>
-        );
+    }}/>
+    );
     };
     
     return (
@@ -45,11 +42,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
-    },
-    gridItem: {
-        flex: 1,
-        margin: 15,
-        height: 150
     }
 });
 
