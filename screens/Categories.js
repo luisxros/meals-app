@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 
+
 import {CATEGORIES} from '../data/fake-data';
 
 
@@ -9,7 +10,16 @@ const Categories = props => {
 
     const renderGridItem = (itemData) => {
         return (
-        <TouchableOpacity style={styles.gridItem} onPress={() => {props.navigation.navigate({routeName: 'CategoryMeals'})}}>
+        <TouchableOpacity 
+        style={styles.gridItem} 
+        onPress={() => {props.navigation.navigate({
+            routeName: 'CategoryMeals', 
+            params: {
+            categoryId: itemData.item.id
+         }
+        });
+        }}
+        >
             <View>
                 <Text>{itemData.item.title}</Text>
             </View>
@@ -24,6 +34,10 @@ const Categories = props => {
        renderItem={renderGridItem} 
        numColumns={2} />
     );
+};
+
+Categories.navigationOptions = {
+    headerTitle: 'Meal Catagories',
 };
 
 const styles = StyleSheet.create({
