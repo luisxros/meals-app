@@ -1,13 +1,13 @@
 import React from 'react';
 import {View, Text, StyleSheet, Button } from 'react-native';
 
-const Categories = props => {
+const CategoryMeals = props => {
     return (
         <View style={styles.screen} >
-            <Text>Categories Screen!</Text>
-            <Button title="Go to Meals!" onPress={() => {
-                props.navigation.navigate({routeName: 'CategoryMeals'})
-            }} />
+            <Text>Category Meals Screen!</Text>
+            <Button title="Go to Details" onPress={() => {props.navigation.navigate({routeName: 'MealDetail'
+            });
+        }}/>
         </View>
     );
 };
@@ -20,4 +20,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Categories
+export default CategoryMeals
