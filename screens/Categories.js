@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import { StyleSheet, FlatList } from 'react-native';
 
 import CategoryGrid from '../components/CategoryGrid';
 import {CATEGORIES} from '../data/fake-data';
