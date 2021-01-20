@@ -28,6 +28,6 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": ""
+    "description": "Miials is an app where you can touch a category you like and touch a meal you like to get the ingredients and steps on how to do it. you also get approximate time on how long it takes to make, or if is affordable  or not."
   }
 }
